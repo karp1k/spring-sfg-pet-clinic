@@ -1,4 +1,4 @@
-package springframework.guru.sfgpetclinic.model;
+package springframework.guru.sfgpetclinic.petclinicdata.model;
 
 /**
  * @author kas
