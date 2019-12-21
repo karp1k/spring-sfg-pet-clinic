@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author kas
  */
 @Controller
-@RequestMapping({"/", "", "index", "index.html"})
-public class IndexController {
+@RequestMapping({"/vets", "/vets/index", "/vets/index.html"})
+public class VetController {
 
     @GetMapping
     public String getIndex() {
-        return "index";
+        return "vets/index";
     }
 }
