@@ -1,5 +1,6 @@
 package springframework.guru.sfgpetclinic.petclinicdata.services.map;
 
+import org.springframework.stereotype.Service;
 import springframework.guru.sfgpetclinic.petclinicdata.model.Pet;
 import springframework.guru.sfgpetclinic.petclinicdata.services.CrudService;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 /**
  * @author kas
  */
+@Service
 public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
 
     @Override
