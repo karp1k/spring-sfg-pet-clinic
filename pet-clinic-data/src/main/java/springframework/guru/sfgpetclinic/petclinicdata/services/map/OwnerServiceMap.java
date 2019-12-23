@@ -1,19 +1,19 @@
 package springframework.guru.sfgpetclinic.petclinicdata.services.map;
 
 import springframework.guru.sfgpetclinic.petclinicdata.model.Owner;
-import springframework.guru.sfgpetclinic.petclinicdata.services.CrudService;
+import springframework.guru.sfgpetclinic.petclinicdata.services.OwnerService;
 
 import java.util.Set;
 
 /**
  * @author kas
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
-//    @Override
-//    public Owner findByLastName(String lastName) {
-//        return null;
-//    }
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 
     @Override
     public Set<Owner> findAll() {
