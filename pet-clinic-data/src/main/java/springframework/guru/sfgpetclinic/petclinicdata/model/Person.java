@@ -1,11 +1,17 @@
 package springframework.guru.sfgpetclinic.petclinicdata.model;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
 /**
  * @author kas
  */
+@MappedSuperclass
 public class Person extends BaseEntity {
 
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
 
     public String getFirstName() {
