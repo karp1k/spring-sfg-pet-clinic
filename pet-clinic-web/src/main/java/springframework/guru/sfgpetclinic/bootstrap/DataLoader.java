@@ -122,6 +122,7 @@ public class DataLoader implements CommandLineRunner {
         vet2.getSpecialitySet().add(savedSpec3);
         vetService.save(vet2);
 
+
         System.out.println("Load vets");
     }
 }
