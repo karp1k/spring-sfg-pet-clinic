@@ -3,10 +3,7 @@ package springframework.guru.sfgpetclinic.petclinicweb.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import springframework.guru.sfgpetclinic.petclinicdata.model.*;
-import springframework.guru.sfgpetclinic.petclinicdata.services.OwnerService;
-import springframework.guru.sfgpetclinic.petclinicdata.services.PetTypeService;
-import springframework.guru.sfgpetclinic.petclinicdata.services.SpecialityService;
-import springframework.guru.sfgpetclinic.petclinicdata.services.VetService;
+import springframework.guru.sfgpetclinic.petclinicdata.services.*;
 
 import java.time.LocalDate;
 
@@ -20,15 +17,18 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     public DataLoader(OwnerService ownerService,
                       VetService vetService,
                       PetTypeService petTypeService,
-                      SpecialityService specialityService) {
+                      SpecialityService specialityService,
+                      VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -87,6 +87,13 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner2);
 
         System.out.println("Load owners");
+
+        Visit pet2Visit = new Visit();
+        pet2Visit.setPet(pet2);
+        pet2Visit.setDate(LocalDate.now());
+        pet2Visit.setDescription("Sneezy Kitty");
+
+        visitService.save(pet2Visit);
 
         Speciality spec1 = new Speciality();
         spec1.setDescription("Radiology");
