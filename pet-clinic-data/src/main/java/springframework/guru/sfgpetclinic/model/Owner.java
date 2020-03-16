@@ -21,12 +21,11 @@ public class Owner extends Person {
 
     @Builder
     public Owner(Long id, String firstName, String lastName, String address,
-                 String city, String phoneNumber, Set<Pet> petSet) {
+                 String city, String phoneNumber) {
         super(id, firstName, lastName);
         this.address = address;
         this.city = city;
         this.phoneNumber = phoneNumber;
-        this.petSet = petSet;
     }
 
     @Column(name = "address")
